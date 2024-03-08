@@ -20,9 +20,9 @@ const create = [
   }).withMessage('Maximum file size of ' + maxFileSize / 1000000 + 'MB'),
   // TODO: Complete validations
   check('address').exists().isString().trim(),
-  check('postalCode').exists().isString().trim(),
+  check('postalCode').exists().isPostalCode().trim(),
   check('url').exists().isDouble(),
-  check('email').optional({ nullable: true, checkFalsy: true }).isString().trim(),
+  check('email').optional({ nullable: true, checkFalsy: true }).isEmail().trim(),
   check('phone').optional({ nullable: true, checkFalsy: true }).isString().trim(),
   check('restaurantCategoryId').exists().isInt(),
   check('userId').exists().isInt()
